@@ -1,6 +1,7 @@
 package model
 
 import (
+	"fmt"
 	"strukturdataMVC/Database"
 	"strukturdataMVC/entity"
 )
@@ -8,6 +9,7 @@ import (
 func ModelInsertMember(container entity.Member) {
 	newGerbong := entity.LinkedlistMember{}
 	newGerbong.Data = container
+	fmt.Println("test passing data to model :", newGerbong.Data)
 	temp := &Database.DBMember
 	if temp.Next == nil {
 		temp.Next = &newGerbong
